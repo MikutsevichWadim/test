@@ -24,11 +24,6 @@
 		$window.on('load', function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
-				AOS.init({
-					duration: 1000,
-					once: true,
-					mirror: false
-				});
 			}, 100);
 		});
 
@@ -36,6 +31,18 @@
 		var $nav = $('#nav');
 
 		if ($nav.length > 0) {
+
+			// Shrink effect.
+				$main
+					.scrollex({
+						mode: 'top',
+						enter: function() {
+							$nav.addClass('alt');
+						},
+						leave: function() {
+							$nav.removeClass('alt');
+						},
+					});
 
 			// Links.
 				var $nav_a = $nav.find('a');

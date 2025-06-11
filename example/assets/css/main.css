@@ -92,9 +92,6 @@ input, select, textarea {
 
 	html {
 		box-sizing: border-box;
-		background: url("../../../siimple/pexels-paduret-1476321.jpg") no-repeat top center;
-		background-size: cover;
-		background-attachment: fixed;
 	}
 
 	*, *:before, *:after {
@@ -102,7 +99,11 @@ input, select, textarea {
 	}
 
 	body {
-		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, #feed01 30%, #df1e23 65%, #000 90%);
+		background-color: #935d8c;
+		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+		background-image: url("images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -119,7 +120,7 @@ input, select, textarea {
 /* Type */
 
 	body {
-		background-color: transparent;
+		background-color: #935d8c;
 		color: rgba(255, 255, 255, 0.65);
 	}
 
@@ -2289,14 +2290,24 @@ input, select, textarea {
 				line-height: 2em;
 			}
 
-		.icon.style1, .icon.style2, .icon.style3, .icon.style4, .icon.style5 {
-			background: -webkit-linear-gradient(45deg, #feed01, #df1e23);
-			background: -o-linear-gradient(45deg, #feed01, #df1e23);
-			background: linear-gradient(45deg, #feed01, #df1e23);
-			-webkit-background-clip: text;
-			background-clip: text;
-			-webkit-text-fill-color: transparent;
-			color: transparent;
+		.icon.style1 {
+			color: #efa8b0;
+		}
+
+		.icon.style2 {
+			color: #c79cc8;
+		}
+
+		.icon.style3 {
+			color: #a89cc8;
+		}
+
+		.icon.style4 {
+			color: #9bb2e1;
+		}
+
+		.icon.style5 {
+			color: #8cc9f0;
 		}
 
 		@media screen and (max-width: 1680px) {
@@ -2873,23 +2884,23 @@ input, select, textarea {
 		}
 
 			.statistics li.style1 {
-				background-color: #df1e23;
+				background-color: #efa8b0;
 			}
 
 			.statistics li.style2 {
-				background-color: #feed01;
+				background-color: #c79cc8;
 			}
 
 			.statistics li.style3 {
-				background-color: #df1e23;
+				background-color: #a89cc8;
 			}
 
 			.statistics li.style4 {
-				background-color: #feed01;
+				background-color: #9bb2e1;
 			}
 
 			.statistics li.style5 {
-				background-color: #df1e23;
+				background-color: #8cc9f0;
 			}
 
 			.statistics li strong, .statistics li b {
@@ -3204,16 +3215,17 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
 		-ms-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
 		transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
-		background-color: #f7f7f7;
+		background-color: #ffffff;
 		color: #636363;
+		position: absolute;
+		width: 64em;
+		max-width: calc(100% - 4em);
 		padding: 1em;
+		background-color: #f7f7f7;
+		border-top-left-radius: 0.25em;
+		border-top-right-radius: 0.25em;
+		cursor: default;
 		text-align: center;
-		position: -webkit-sticky;
-		position: sticky;
-		top: 0;
-		z-index: 10000;
-		width: 100%;
-		left: 0;
 	}
 
 		#nav input, #nav select, #nav textarea {
@@ -3289,6 +3301,24 @@ input, select, textarea {
 						box-shadow: none;
 					}
 
+		#nav.alt {
+			position: fixed;
+			top: 0;
+			padding: 0.5em 1em;
+			background-color: rgba(247, 247, 247, 0.95);
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			z-index: 10000;
+		}
+
+			#nav.alt ul li {
+				margin: 0 0.175em;
+			}
+
+				#nav.alt ul li a {
+					font-size: 0.9em;
+				}
+
 		@media screen and (max-width: 736px) {
 
 			#nav {
@@ -3307,10 +3337,6 @@ input, select, textarea {
 		background-color: #ffffff;
 		color: #636363;
 		border-radius: 0.25em;
-		-moz-flex-grow: 1;
-		-webkit-flex-grow: 1;
-		-ms-flex-grow: 1;
-		flex-grow: 1;
 	}
 
 		#main input, #main select, #main textarea {
@@ -3385,7 +3411,7 @@ input, select, textarea {
 			#main input[type="button"].primary,
 			#main button.primary,
 			#main .button.primary {
-				background-color: #df1e23;
+				background-color: #8cc9f0;
 				color: #ffffff !important;
 				box-shadow: none;
 			}
@@ -3395,7 +3421,7 @@ input, select, textarea {
 				#main input[type="button"].primary:hover,
 				#main button.primary:hover,
 				#main .button.primary:hover {
-					background-color: #e4353a;
+					background-color: #9acff2;
 				}
 
 				#main input[type="submit"].primary:active,
@@ -3403,7 +3429,7 @@ input, select, textarea {
 				#main input[type="button"].primary:active,
 				#main button.primary:active,
 				#main .button.primary:active {
-					background-color: #c91c20;
+					background-color: #7ec3ee;
 				}
 
 				#main input[type="submit"].primary.icon:before,
@@ -3432,8 +3458,8 @@ input, select, textarea {
 			#main input[type="email"]:focus,
 			#main select:focus,
 			#main textarea:focus {
-				border-color: #df1e23;
-				box-shadow: 0 0 0 1px #df1e23;
+				border-color: #8cc9f0;
+				box-shadow: 0 0 0 1px #8cc9f0;
 			}
 
 		#main select {
@@ -3465,8 +3491,8 @@ input, select, textarea {
 
 		#main input[type="checkbox"]:focus + label:before,
 		#main input[type="radio"]:focus + label:before {
-			border-color: #df1e23;
-			box-shadow: 0 0 0 1px #df1e23;
+			border-color: #8cc9f0;
+			box-shadow: 0 0 0 1px #8cc9f0;
 		}
 
 		#main ::-webkit-input-placeholder {
@@ -3520,10 +3546,10 @@ input, select, textarea {
 
 		#main header.major h2:after {
 			background-color: #dddddd;
-			background-image: -moz-linear-gradient(90deg, #feed01, #df1e23);
-			background-image: -webkit-linear-gradient(90deg, #feed01, #df1e23);
-			background-image: -ms-linear-gradient(90deg, #feed01, #df1e23);
-			background-image: linear-gradient(90deg, #feed01, #df1e23);
+			background-image: -moz-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+			background-image: -webkit-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+			background-image: -ms-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+			background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
 		}
 
 		#main table tbody tr {
@@ -3667,13 +3693,7 @@ input, select, textarea {
 		padding: 5em 5em 3em 5em ;
 		width: calc(100% + 2em);
 		margin: 0 0 3em -2em;
-		color: #ffffff !important;
-		background: #000;
 	}
-
-		#footer * {
-			color: #ffffff !important;
-		}
 
 		#footer > * {
 			width: calc(50% - 2em);
@@ -3746,15 +3766,6 @@ input, select, textarea {
 		width: 64em;
 		max-width: calc(100% - 4em);
 		margin: 0 auto;
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		-moz-flex-direction: column;
-		-webkit-flex-direction: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		min-height: 100vh;
 	}
 
 		@media screen and (max-width: 480px) {
