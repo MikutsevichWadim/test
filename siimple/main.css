@@ -1,0 +1,795 @@
+/**
+* Template Name: Siimple
+* Template URL: https://bootstrapmade.com/free-bootstrap-landing-page/
+* Updated: Aug 07 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables - ИСПРАВЛЕННАЯ МИНИМАЛИСТИЧНАЯ ГАММА
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway",  sans-serif;
+  --nav-font: "Poppins",  sans-serif;
+}
+
+/* Global Colors - Акцентный цвет ОРАНЖЕВЫЙ, как в оригинале */
+:root {
+  --background-color: #ffffff;    /* Основной фон - белый */
+  --default-color: #444444;       /* Основной цвет текста - темный (для контраста на светлом фоне) */
+  --heading-color: #462918;       /* Цвет заголовков - темно-коричневый */
+  --accent-color: #fd680e;        /* Акцентный цвет - ОРАНЖЕВЫЙ (как в оригинале Siimple) */
+  --surface-color: #ffffff;       /* Цвет поверхности блоков (карточек) - белый */
+  --contrast-color: #ffffff;      /* Цвет текста на акцентном/темном фоне - белый */
+  --hover-color: #fd680e;         /* Цвет при наведении - ОРАНЖЕВЫЙ */
+
+  /* Специальные цвета для секций (КРАСНЫЙ и ЖЕЛТЫЙ, как акцентные фоны) */
+  --banner-red: #FF0000;
+  --banner-yellow: #FFDD00;
+  --banner-dark-red: #AA0000;
+  --banner-dark-grey: #333333; /* Темно-серый для футера */
+}
+
+/* Nav Menu Colors - Навбар будет темно-серым, а его элементы БЕЛЫМИ */
+:root {
+  --nav-color: var(--contrast-color);  /* Белый текст на навбаре */
+  --nav-hover-color: var(--hover-color); /* ОРАНЖЕВЫЙ при наведении */
+  --nav-mobile-background-color: #0a0a0a; /* Темный фон для мобильного меню */
+  --nav-dropdown-background-color: #3b3b3b;
+  --nav-dropdown-color: var(--contrast-color);
+  --nav-dropdown-hover-color: var(--hover-color);
+}
+
+/* Color Presets - для секций */
+.light-background {
+  --background-color: #f8f4f2;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: var(--banner-dark-grey); /* Фон футера будет темно-серым */
+  --default-color: #ffffff; /* Текст в футере будет белым */
+  --heading-color: #ffffff;
+  --surface-color: #898989;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+/* ОБЩИЕ ССЫЛКИ - теперь будут акцентного цвета (оранжевого) */
+a {
+  color: var(--accent-color); /* Акцентный цвет (оранжевый) */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%); /* Темнее оранжевый при наведении */
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color); /* Темно-коричневые заголовки */
+  font-family: var(--heading-font);
+}
+
+/* PHP Email Form Messages (стили остались, но форма удалена из HTML) */
+.php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--surface-color);
+  animation: php-email-form-loading 1s linear infinite;
+}
+
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Header - Навбар
+--------------------------------------------------------------*/
+.header {
+  --background-color: rgba(33, 37, 41, 0.9); /* Непрозрачный темно-серый фон */
+  --default-color: var(--contrast-color); /* Белый текст */
+  --heading-color: var(--contrast-color); /* Белый заголовок */
+  background-color: var(--background-color);
+  padding: 15px 0;
+  transition: all 0.5s;
+  z-index: 997;
+  border-bottom: none;
+}
+
+.header .logo {
+  line-height: 1;
+}
+
+.header .logo h1 {
+  font-size: 40px;
+  margin: 0;
+  font-weight: 300;
+  color: var(--heading-color);
+}
+
+/* Стили для контактов в шапке */
+.header .header-contact-info {
+    font-family: var(--nav-font);
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.header .header-contact-info a {
+    color: var(--nav-color); /* Белый */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.header .header-contact-info a:hover {
+    color: var(--nav-hover-color); /* ОРАНЖЕВЫЙ при наведении */
+}
+
+.header .header-contact-info .viber-icon-header,
+.header .header-contact-info .instagram-icon-header {
+    font-size: 24px;
+}
+
+/* Global Header on Scroll */
+.scrolled .header {
+  --background-color: #212529; /* Чуть темнее при скролле */
+}
+
+/* Адаптивность для шапки */
+@media (max-width: 992px) {
+  .header .container-fluid {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .header .logo h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .header .header-contact-info {
+    white-space: normal;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .logo h1 {
+    font-size: 22px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu - Навбар без бургера, элементы на навбаре
+--------------------------------------------------------------*/
+/* Для десктопа */
+.navmenu {
+  position: static;
+  width: auto;
+  background: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navmenu ul {
+    display: none;
+}
+
+/* Стили для контейнера номера телефона и иконки Instagram/Viber */
+.navmenu .header-contact-info {
+    font-family: var(--nav-font);
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+/* Стили для номера телефона в шапке */
+.navmenu .header-contact-info .phone-number-header {
+    color: var(--nav-color); /* Белый */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navmenu .header-contact-info .phone-number-header:hover {
+    color: var(--nav-hover-color); /* ОРАНЖЕВЫЙ при наведении */
+}
+
+/* Стили для иконки Instagram в шапке */
+.navmenu .header-contact-info .instagram-icon-header {
+    color: var(--nav-color); /* Белый */
+    font-size: 24px;
+    transition: color 0.3s;
+    margin-left: 15px;
+}
+
+.navmenu .header-contact-info .instagram-icon-header:hover {
+    color: var(--nav-hover-color); /* ОРАНЖЕВЫЙ при наведении */
+}
+
+/* Стили для иконки Viber в шапке - БЕЛЫЙ */
+.navmenu .header-contact-info .viber-icon-header {
+    color: var(--nav-color); /* Белый */
+    font-size: 24px;
+    transition: color 0.3s;
+    margin-right: 15px;
+}
+
+.navmenu .header-contact-info .viber-icon-header:hover {
+    color: var(--nav-hover-color); /* ОРАНЖЕВЫЙ при наведении */
+}
+
+/* Бургер-иконка теперь не нужна */
+.mobile-nav-toggle {
+    display: none !important;
+}
+
+/* Адаптивность для элементов в шапке на меньших экранах */
+@media (max-width: 768px) {
+    .navmenu .header-contact-info {
+        font-size: 16px;
+    }
+    .navmenu .header-contact-info .instagram-icon-header,
+    .navmenu .header-contact-info .viber-icon-header {
+        font-size: 20px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+.footer {
+  color: var(--default-color); /* Текст в футере будет белым */
+  background-color: var(--background-color); /* Фон футера будет темно-серым */
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+  border-top: none;
+}
+
+.footer h3 {
+  font-size: 36px;
+  font-weight: 300;
+  position: relative;
+  padding: 0;
+  margin: 0 0 15px 0;
+  color: var(--contrast-color); /* Белый */
+}
+
+.footer p {
+  font-size: 15px;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 30px 0;
+  color: var(--default-color); /* Белый текст */
+}
+
+.footer .social-links {
+  margin: 0 0 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ОБЩИЕ СТИЛИ для всех ссылок в футере social-links */
+.footer .social-links a {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-color); /* Акцентный цвет (оранжевый) */
+  color: var(--contrast-color); /* Белый */
+  line-height: 1;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 25%); /* Темнее оранжевый при наведении */
+  color: var(--contrast-color); /* Белый */
+  text-decoration: none;
+}
+
+/* Стили для номера телефона в футере (текст) */
+.footer .social-links .phone-number-footer {
+    background: none; /* Без фона */
+    color: var(--default-color); /* Белый текст */
+    font-size: 16px;
+    font-weight: 600;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer .social-links .phone-number-footer:hover {
+    color: var(--accent-color); /* ОРАНЖЕВЫЙ при наведении */
+    background: none;
+}
+
+/* Стили для иконки Instagram в футере */
+.footer .social-links .instagram-icon-footer {
+    background: var(--accent-color); /* ОРАНЖЕВЫЙ */
+    color: var(--contrast-color); /* Белый */
+}
+.footer .social-links .instagram-icon-footer:hover {
+    background: color-mix(in srgb, var(--accent-color), transparent 25%); /* Темнее оранжевый */
+}
+
+/* Стили для иконки Viber в футере */
+.footer .social-links .viber-icon-footer {
+    background-color: #8D41C4; /* ЦВЕТ VIBER - фиолетовый */
+    color: var(--contrast-color); /* Белый */
+}
+.footer .social-links .viber-icon-footer:hover {
+    background-color: #AF6DE6; /* Светлее при наведении */
+}
+
+
+.footer .copyright {
+  padding-top: 25px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  color: var(--default-color); /* Белый */
+}
+
+.footer .credits {
+  font-size: 13px;
+  padding-top: 5px;
+  color: var(--default-color);
+  display: none;
+}
+
+
+/*--------------------------------------------------------------
+# Preloader (акцентные цвета стали оранжевыми)
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background-color: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1s linear infinite;
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid var(--accent-color); /* ОРАНЖЕВЫЙ */
+  border-top-color: color-mix(in srgb, var(--accent-color), transparent 90%); /* ОРАНЖЕВЫЙ */
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+----------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: -15px;
+  z-index: 99999;
+  background-color: var(--accent-color); /* ОРАНЖЕВЫЙ */
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color); /* БЕЛЫЙ */
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%); /* Темнее оранжевый */
+  color: var(--contrast-color); /* Белый */
+}
+
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices (без изменений)
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs (без изменений)
+--------------------------------------------------------------*/
+.page-title {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 160px 0 80px 0;
+  text-align: center;
+  position: relative;
+}
+
+.page-title:before {
+  content: "";
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  position: absolute;
+  inset: 0;
+}
+
+.page-title h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.page-title .breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.page-title .breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.page-title .breadcrumbs ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 78px;
+  overflow: clip;
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  color: var(--heading-color); /* Темно-коричневый */
+}
+
+.section-title p {
+  margin-bottom: 0;
+  color: var(--default-color);
+}
+
+/*--------------------------------------------------------------
+# Hero Section - Возвращаем к оригинальному стилю с видео
+--------------------------------------------------------------*/
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: url('pexels-paduret-1476321.jpg') center center; /* Путь к вашему изображению */
+  background-size: cover;
+}
+
+/* Затемняющий оверлей для изображения */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Мягкое затемнение (черный с 40% прозрачностью) */
+  z-index: 2;
+}
+
+/* Скрываем элементы, добавленные для баннера, теперь они не используются */
+.hero .hero-yellow-overlay,
+.hero .hero-red-overlay,
+.hero .hero-content-banner {
+    display: none;
+}
+
+/* Контент Hero секции (оригинальный) */
+.hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--contrast-color); /* Белый текст */
+}
+
+.hero p {
+  margin: 10px 0 0 0;
+  font-size: 24px;
+  color: var(--contrast-color); /* Белый текст */
+}
+
+.hero .btn-get-started {
+  color: var(--contrast-color);
+  background: var(--accent-color); /* ОРАНЖЕВЫЙ */
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 40px;
+  margin: 30px 0 0 0;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.hero .btn-get-started:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 25%); /* Темнее оранжевый */
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# About Section (без изменений)
+--------------------------------------------------------------*/
+.about .content h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.about .content .fst-italic {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding: 10px 0 0 0;
+  display: flex;
+}
+
+.about .content ul i {
+  color: var(--accent-color); /* ОРАНЖЕВЫЙ */
+  margin-right: 0.5rem;
+  line-height: 1.2;
+  font-size: 1.25rem;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Services Section - Желтый фон с темным текстом
+--------------------------------------------------------------*/
+.services {
+  background-color: var(--banner-yellow);
+  color: var(--default-color);
+  padding: 60px 0;
+  border-top: 3px solid var(--accent-color);
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.services .section-title h2,
+.services .section-title p {
+  color: var(--default-color);
+}
+
+.services .service-item {
+  background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон для карточек */
+  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+  padding: 60px 30px;
+  transition: ease-in-out 0.3s;
+  border-radius: 18px;
+  border-bottom: 5px solid rgba(255, 255, 255, 0.1); /* Прозрачная полоса, для эффекта ховера */
+  height: 100%;
+}
+
+.services .service-item .icon {
+  color: var(--default-color); /* Темный цвет иконок */
+  background: var(--contrast-color); /* БЕЛЫЙ фон для иконок */
+  margin: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  transition: ease-in-out 0.3s;
+}
+
+.services .service-item h3 {
+  font-weight: 700;
+  margin: 10px 0 15px 0;
+  font-size: 22px;
+  transition: ease-in-out 0.3s;
+  color: var(--heading-color);
+}
+
+.services .service-item p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+  color: var(--default-color);
+}
+
+@media (min-width: 1365px) {
+  .services .service-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color); /* ОРАНЖЕВЫЙ при наведении */
+  }
+
+  .services .service-item:hover h3 {
+    color: var(--accent-color); /* ОРАНЖЕВЫЙ при наведении */
+  }
+  .services .service-item:hover .icon {
+      background: var(--accent-color); /* ОРАНЖЕВЫЙ фон иконки при наведении */
+      color: var(--contrast-color); /* БЕЛЫЙ иконка на оранжевом фоне */
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact {
+    background-color: var(--background-color);
+    padding: 60px 0;
+}
+.contact .info-item {
+  background-color: var(--surface-color);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+.contact .info-item i {
+  color: var(--accent-color); /* ОРАНЖЕВЫЙ */
+}
+.contact .info-item h3 {
+  color: var(--heading-color); /* Темно-коричневый */
+}
+.contact .info-item p {
+  color: var(--default-color); /* Темный */
+}
+.contact .info-item p a {
+    color: var(--accent-color); /* ОРАНЖЕВЫЙ */
+}
+.contact .info-item p a:hover {
+    color: color-mix(in srgb, var(--accent-color), transparent 25%); /* Темнее оранжевый при наведении */
+}
+.contact .php-email-form {
+  display: none; /* Форма удалена */
+}
+
+
+/*--------------------------------------------------------------
+# Location Section - Желтый фон с темным текстом
+--------------------------------------------------------------*/
+.location {
+    background-color: var(--banner-yellow);
+    color: var(--default-color);
+    padding: 60px 0;
+}
+.location .section-title h2,
+.location .section-title p {
+    color: var(--default-color); /* Темный заголовок и текст */
+}

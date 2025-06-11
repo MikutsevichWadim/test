@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор дизайна</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            flex-direction: column;
+            gap: 20px;
+        }
+        h1 {
+            color: #333;
+            font-weight: 500;
+        }
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        a {
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 12px 25px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            color: #007aff;
+            background-color: white;
+            transition: all 0.2s ease-in-out;
+            text-align: center;
+            min-width: 200px;
+        }
+        a:hover {
+            background-color: #f0f2f5;
+            border-color: #007aff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Выберите вариант сайта</h1>
+    <div class="links-container">
+        <a href="siimple/index.html">Дизайн 1</a>
+        <a href="#">Дизайн 2 (в разработке)</a>
+        <a href="#">Дизайн 3 (в разработке)</a>
+    </div>
+</body>
+</html> 
