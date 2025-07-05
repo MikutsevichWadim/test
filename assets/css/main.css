@@ -102,7 +102,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, #feed01 30%, #df1e23 65%, #000 90%);
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, #00CDFF 30%, #00448E 65%, #000 90%);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -1956,7 +1956,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #8cc9f0;
+			background-color: #00448E;
 			color: #ffffff !important;
 			box-shadow: none;
 		}
@@ -1966,7 +1966,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #9acff2;
+				background-color: #002992;
 			}
 
 			input[type="submit"].primary:active,
@@ -1974,7 +1974,7 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #7ec3ee;
+				background-color: #3F9AB5;
 			}
 
 			input[type="submit"].primary.icon:before,
@@ -2290,9 +2290,9 @@ input, select, textarea {
 			}
 
 		.icon.style1, .icon.style2, .icon.style3, .icon.style4, .icon.style5 {
-			background: -webkit-linear-gradient(45deg, #feed01, #df1e23);
-			background: -o-linear-gradient(45deg, #feed01, #df1e23);
-			background: linear-gradient(45deg, #feed01, #df1e23);
+					background: -webkit-linear-gradient(45deg, #00CDFF, #00448E);
+		background: -o-linear-gradient(45deg, #00CDFF, #00448E);
+		background: linear-gradient(45deg, #00CDFF, #00448E);
 			-webkit-background-clip: text;
 			background-clip: text;
 			-webkit-text-fill-color: transparent;
@@ -2873,7 +2873,7 @@ input, select, textarea {
 		}
 
 			.statistics li.style1 {
-				background-color: #df1e23;
+				background-color: #00448E;
 			}
 
 			.statistics li.style2 {
@@ -2881,7 +2881,7 @@ input, select, textarea {
 			}
 
 			.statistics li.style3 {
-				background-color: #df1e23;
+				background-color: #00448E;
 			}
 
 			.statistics li.style4 {
@@ -2889,7 +2889,7 @@ input, select, textarea {
 			}
 
 			.statistics li.style5 {
-				background-color: #df1e23;
+				background-color: #00448E;
 			}
 
 			.statistics li strong, .statistics li b {
@@ -3385,7 +3385,7 @@ input, select, textarea {
 			#main input[type="button"].primary,
 			#main button.primary,
 			#main .button.primary {
-				background-color: #df1e23;
+				background-color: #00448E;
 				color: #ffffff !important;
 				box-shadow: none;
 			}
@@ -3395,7 +3395,7 @@ input, select, textarea {
 				#main input[type="button"].primary:hover,
 				#main button.primary:hover,
 				#main .button.primary:hover {
-					background-color: #e4353a;
+					background-color: #002992;
 				}
 
 				#main input[type="submit"].primary:active,
@@ -3403,7 +3403,7 @@ input, select, textarea {
 				#main input[type="button"].primary:active,
 				#main button.primary:active,
 				#main .button.primary:active {
-					background-color: #c91c20;
+					background-color: #3F9AB5;
 				}
 
 				#main input[type="submit"].primary.icon:before,
@@ -3432,8 +3432,8 @@ input, select, textarea {
 			#main input[type="email"]:focus,
 			#main select:focus,
 			#main textarea:focus {
-				border-color: #df1e23;
-				box-shadow: 0 0 0 1px #df1e23;
+				border-color: #00448E;
+				box-shadow: 0 0 0 1px #00448E;
 			}
 
 		#main select {
@@ -3465,8 +3465,8 @@ input, select, textarea {
 
 		#main input[type="checkbox"]:focus + label:before,
 		#main input[type="radio"]:focus + label:before {
-			border-color: #df1e23;
-			box-shadow: 0 0 0 1px #df1e23;
+			border-color: #00448E;
+			box-shadow: 0 0 0 1px #00448E;
 		}
 
 		#main ::-webkit-input-placeholder {
@@ -3520,10 +3520,10 @@ input, select, textarea {
 
 		#main header.major h2:after {
 			background-color: #dddddd;
-			background-image: -moz-linear-gradient(90deg, #feed01, #df1e23);
-			background-image: -webkit-linear-gradient(90deg, #feed01, #df1e23);
-			background-image: -ms-linear-gradient(90deg, #feed01, #df1e23);
-			background-image: linear-gradient(90deg, #feed01, #df1e23);
+			background-image: -moz-linear-gradient(90deg, #00CDFF, #00448E);
+			background-image: -webkit-linear-gradient(90deg, #00CDFF, #00448E);
+			background-image: -ms-linear-gradient(90deg, #00CDFF, #00448E);
+			background-image: linear-gradient(90deg, #00CDFF, #00448E);
 		}
 
 		#main table tbody tr {
