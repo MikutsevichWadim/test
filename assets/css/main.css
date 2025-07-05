@@ -3067,11 +3067,18 @@ input, select, textarea {
 
 		#header h1 {
 			margin: 0 0 0.25em 0;
+			color: #ffffff;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 205, 255, 0.5);
+			font-weight: 700;
+			letter-spacing: 0.1em;
 		}
 
 		#header p {
 			font-size: 1.25em;
 			letter-spacing: -0.025em;
+			color: #ffffff;
+			text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 68, 142, 0.4);
+			font-weight: 400;
 		}
 
 		#header.alt {
